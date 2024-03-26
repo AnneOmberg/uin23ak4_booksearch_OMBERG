@@ -1,14 +1,13 @@
 @import '_variables.scss';
 
+
+:root {}
+
 body {
     background-color: $dark;
     font-family: $font;
+    font-weight: 200;
     color: $white;
-
-    h1,
-    h2 {
-        font-weight: 200;
-    }
 
     li {
         list-style: none;

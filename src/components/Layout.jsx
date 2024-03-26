@@ -6,17 +6,17 @@ export default function Layout({ children }) {
     const [books, setBooks] = useState(); // Changed state variable name to 'books'
 
 
-    const getBooks = async () => {
-        fetch(`https://openlibrary.org/search.json`)
-            .then(response => response.json())
-            .then(data => setBooks(data))
-            .catch(error => console.error(error))
-    }
+    // const getBooks = async () => {
+    //     fetch(`https://openlibrary.org/search.json?q=crime+and+punishment&fields=key,title,author_name,editions`)
+    //         .then(response => response.json())
+    //         .then(data => setBooks(data))
+    //         .catch(error => console.error(error))
+    // }
 
 
-    useEffect(() => {
-        getBooks()
-    }, [])
+    // useEffect(() => {
+    //     getBooks()
+    // }, [])
 
     return (
         <>

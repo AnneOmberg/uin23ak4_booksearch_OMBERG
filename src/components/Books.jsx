@@ -11,7 +11,7 @@ export default function BookCard() {
         <>
             <h2>kategorier</h2>
             <ul>
-                {catArray.map((category, index) => <li key={category + index}><Link to={category}>{category}</Link></li>)}
+                {/* {catArray.map((category, index) => <li key={category + index}><Link to={category}>{category}</Link></li>)} */}
             </ul>
 
         </>
