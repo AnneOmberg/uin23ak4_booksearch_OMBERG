@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom"
 import Search from './Search'
+import SearchResults from './SearchResults';
 
 export default function Layout({ children }) {
 
@@ -24,7 +25,7 @@ export default function Layout({ children }) {
             <header>
 
                 <h2>En digital bokoversikt</h2>
-                <Search></Search>
+                <SearchResults></SearchResults>
             </header>
             <main>
                 {children}

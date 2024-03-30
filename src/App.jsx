@@ -1,10 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './App.css'
-import Home from './components/Home'
 import Layout from './components/Layout'
-import Category from './components/Category'
-import Books from './components/Books'
+import BookCard from './components/BookCard'
 
 
 function App() {
@@ -37,7 +35,7 @@ function App() {
       <Layout>
         <Routes>
           {/* bestemmer at Home blir startsiden */}
-          <Route index element={<Home content={content} setQuery={setQuery} setContent={setContent} />} />
+          <Route index element={<BookCard content={content} />} />
           {/* <Route path="books/*" element={<Books />}>
             <Route index element={<Books />} />
             <Route path=':slug' element={<Category />} />
