@@ -9,20 +9,27 @@ import Books from './components/Books'
 
 function App() {
 
+  const [query, setQuery] = useState("")
   const [content, setContent] = useState([])
 
   const getData = async () => {
-    const response = await fetch('https://openlibrary.org/search.json?q=the+lord+of+the+rings')
-    const data = await response.json()
-    setContent(data.docs)
-    console.log(data)
+    try {
+      const response = await fetch(`https://openlibrary.org/search.json?q=${query}`)
+      // 'https://openlibrary.org/search.json?q=james+bond'
+      // 'https://openlibrary.org/search.json?q={search_query}'
+      const data = await response.json()
+      setContent(data.docs)
+    } catch {
+      console.error("somethinng is fucked")
+    }
   }
 
   useEffect(() => {
     getData()
-  }, [])
+  }, [query])
 
-  // console.log(content)
+  console.log("Home", content)
+
 
   return (
     <>

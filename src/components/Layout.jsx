@@ -21,7 +21,6 @@ export default function Layout({ children }) {
     return (
         <>
             <header>
-                <h1>Digitalt bibliotek</h1>
                 <nav>
                     <ul>
                         <li><Link to="/">Home</Link></li>
