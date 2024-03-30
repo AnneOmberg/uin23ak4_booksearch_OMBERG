@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom"
+import Search from './Search'
 
 export default function Layout({ children }) {
 
@@ -21,12 +22,9 @@ export default function Layout({ children }) {
     return (
         <>
             <header>
-                <nav>
-                    <ul>
-                        {/* <li><Link to="/">Home</Link></li> */}
-                        {/*<li><Link to="/books">Books</Link></li>  Corrected link path */}
-                    </ul>
-                </nav>
+
+                <h2>En digital bokoversikt</h2>
+                <Search></Search>
             </header>
             <main>
                 {children}

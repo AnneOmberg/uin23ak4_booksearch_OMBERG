@@ -20,7 +20,6 @@ export default function Home({ query, setQuery, content, setContent }) {
 
     return (
         <section>
-            <h2>Home</h2>
             {content.map(item => <article key={item.key}>
                 <h3>{item.title}</h3>
                 <img src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`} alt={item.title} />

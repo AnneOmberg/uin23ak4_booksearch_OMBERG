@@ -1,9 +1,15 @@
 @import '_variables.scss';
 
 
-:root {}
+:root {
+    img {
+        height: 500px;
+    }
+}
 
 body {
+    display: flex;
+    justify-content: space-between;
     background-color: $dark;
     font-family: $font;
     font-weight: 200;
