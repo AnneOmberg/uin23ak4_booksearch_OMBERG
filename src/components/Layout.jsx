@@ -23,8 +23,8 @@ export default function Layout({ children }) {
             <header>
                 <nav>
                     <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/books">Books</Link></li> {/* Corrected link path */}
+                        {/* <li><Link to="/">Home</Link></li> */}
+                        {/*<li><Link to="/books">Books</Link></li>  Corrected link path */}
                     </ul>
                 </nav>
             </header>

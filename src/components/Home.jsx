@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Home({ query, setQuery, content }) {
+export default function Home({ query, setQuery, content, setContent }) {
 
 
     // const jamesBondBooks = content.filter(item => {
@@ -13,6 +13,10 @@ export default function Home({ query, setQuery, content }) {
     // }
 
     // console.log("James Bond Books:", content)
+
+    // const startContent = () => {
+    //     setQuery('james+bond')
+    // }
 
     return (
         <section>
