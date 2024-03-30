@@ -3,19 +3,21 @@ import { useEffect, useState } from 'react'
 export default function Home({ query, setQuery, content }) {
 
 
-    const jamesBondBooks = content.filter(item => {
-        return (
-            item.title.toLowerCase().includes('james bond')
-        )
-    })
+    // const jamesBondBooks = content.filter(item => {
+    //     // item.title.toLowerCase().includes('james bond')
+    //     setQuery('james+bond')
+    // })
 
-    console.log("James Bond Books:", jamesBondBooks.map(item => item.title));
+    // const jamesBondBooks = () => {
+    //     setQuery("james+bond")
+    // }
 
+    // console.log("James Bond Books:", content)
 
     return (
         <section>
             <h2>Home</h2>
-            {content?.map(item => <article key={item.key}>
+            {content.map(item => <article key={item.key}>
                 <h3>{item.title}</h3>
                 <img src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`} alt={item.title} />
                 <p>{item.author_name}</p>

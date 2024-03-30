@@ -19,6 +19,7 @@ function App() {
       // 'https://openlibrary.org/search.json?q={search_query}'
       const data = await response.json()
       setContent(data.docs)
+      setQuery("query")
     } catch {
       console.error("somethinng is fucked")
     }
@@ -36,7 +37,7 @@ function App() {
       <Layout>
         <Routes>
           {/* bestemmer at Home blir startsiden */}
-          <Route index element={<Home content={content} />} />
+          <Route index element={<Home content={content} setQuery={setQuery} />} />
           <Route path="books/*" element={<Books />}>
             <Route index element={<Books />} />
             <Route path=':slug' element={<Category />} />
