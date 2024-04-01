@@ -1,37 +1,26 @@
 import { useEffect, useState } from 'react'
 import { Link, Outlet } from "react-router-dom"
-import Search from './Search'
 import SearchResults from './SearchResults';
 
-export default function Layout({ children }) {
-
-    const [books, setBooks] = useState(); // Changed state variable name to 'books'
-
-
-    // const getBooks = async () => {
-    //     fetch(`https://openlibrary.org/search.json?q=crime+and+punishment&fields=key,title,author_name,editions`)
-    //         .then(response => response.json())
-    //         .then(data => setBooks(data))
-    //         .catch(error => console.error(error))
-    // }
-
-
-    // useEffect(() => {
-    //     getBooks()
-    // }, [])
+export default function Layout({ children, content, setQuery }) {
 
     return (
         <>
             <header>
-
                 <h2>En digital bokoversikt</h2>
-                <SearchResults></SearchResults>
+                <nav>
+                    <ul>
+                        <li><Link to="/">BookCard</Link></li>
+                        <li><Link to="search">SearchResults</Link></li>
+                    </ul>
+                </nav>
+
             </header>
             <main>
                 {children}
             </main>
             <footer>
-                <Outlet />
+                footer
             </footer>
         </>
     )

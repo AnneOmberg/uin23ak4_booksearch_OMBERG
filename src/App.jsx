@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Layout from './components/Layout'
 import BookCard from './components/BookCard'
+import SearchResults from './components/SearchResults'
 
 
 function App() {
@@ -10,14 +11,15 @@ function App() {
   const [query, setQuery] = useState("")
   const [content, setContent] = useState([])
 
+  const formatTitle = (title) => {
+    return title.toLowerCase().replace(/\s/g, "+")
+  }
+
   const getData = async () => {
     try {
-      const response = await fetch(`https://openlibrary.org/search.json?q=${query}`)
-      // 'https://openlibrary.org/search.json?q=james+bond'
-      // 'https://openlibrary.org/search.json?q={search_query}'
-      const data = await response.json()
+      const res = await fetch(`https://openlibrary.org/search.json?title=${query}`)
+      const data = await res.json()
       setContent(data.docs)
-      setQuery("james+bond")
     } catch {
       console.error("somethinng is fucked")
     }
@@ -27,21 +29,18 @@ function App() {
     getData()
   }, [query])
 
-  console.log("Home", content)
 
 
   return (
     <>
       <Layout>
         <Routes>
-          {/* bestemmer at Home blir startsiden */}
-          <Route index element={<BookCard content={content} />} />
-          {/* <Route path="books/*" element={<Books />}>
-            <Route index element={<Books />} />
-            <Route path=':slug' element={<Category />} />
-          </Route> */}
+          {/* Bestemmer at BookCard blir startsiden */}
+          <Route index element={<BookCard content={content} query={query} setQuery={setQuery} />} />
+          <Route path="/search" element={<SearchResults content={content} setQuery={setQuery} />} />
         </Routes>
-      </Layout >
+      </Layout>
+
     </>
   )
 }
