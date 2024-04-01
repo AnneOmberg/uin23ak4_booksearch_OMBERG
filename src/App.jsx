@@ -17,11 +17,11 @@ function App() {
 
   const getData = async () => {
     try {
-      const res = await fetch(`https://openlibrary.org/search.json?title=${query}`)
-      const data = await res.json()
+      const response = await fetch(`https://openlibrary.org/search.json?title=${query}`)
+      const data = await response.json()
       setContent(data.docs)
     } catch {
-      console.error("somethinng is fucked")
+      console.error("error with getData")
     }
   }
 
