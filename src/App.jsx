@@ -4,11 +4,13 @@ import './App.css'
 import Layout from './components/Layout'
 import BookCard from './components/BookCard'
 import SearchResults from './components/SearchResults'
+import Category from './components/Category'
 
 
 function App() {
 
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("james bond series")
+  // const [title, setTitle] = useState("title=")
   // bracets indikerer array
   const [content, setContent] = useState([])
 
@@ -19,20 +21,14 @@ function App() {
       const data = await response.json()
       setContent(data.docs)
     } catch {
-      console.error("error with fetch from getData")
+      console.error("Det har skjedd en feil")
     }
   }
-
-  {/*const getData = async () => {
-    fetch(`https://openlibrary.org/search.json?title=${query}`)
-      .then((response) => response.json())
-      .then((data) => setContent(data.docs))
-      .catch((error) => console.error(error))
-  }*/}
 
   useEffect(() => {
     getData()
   }, [query])
+
 
 
   const formatTitle = (title) => {
@@ -45,9 +41,10 @@ function App() {
         <Routes>
           {/* Bestemmer at BookCard blir startsiden */}
           <Route index element={<BookCard content={content} query={query} setQuery={setQuery} />} />
-          <Route path="/search" element={<SearchResults content={content} setQuery={setQuery} />} />
+          <Route path="/search" element={<SearchResults />}>
+          </Route>
         </Routes>
-      </Layout>
+      </Layout >
 
     </>
   )

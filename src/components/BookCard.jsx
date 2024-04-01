@@ -4,13 +4,11 @@ export default function BookCard({ content, query, setQuery }) {
 
     // const [homePage, setHomePage] = useState("")
 
-    const homeData = () => {
+    const hoemData = () => {
         setQuery("james bond series")
     }
 
-    useEffect(() => {
-        homeData()
-    }, [])
+
 
     console.log("BookCard", content)
 

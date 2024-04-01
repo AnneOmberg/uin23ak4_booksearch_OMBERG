@@ -1,9 +1,20 @@
 import { useEffect, useState } from 'react'
 import BookCard from './BookCard'
+import { Link, Outlet } from "react-router-dom"
+import { useHistory } from 'react-router-dom'
 
-export default function SearchResults({ content, query, setQuery }) {
+export default function SearchResults({ content, setQuery }) {
 
     const [search, setSearch] = useState("")
+    const history = useHistory()
+
+    // const homeData = () => {
+    //     setQuery("james bond series")
+    // }
+
+    // useEffect(() => {
+    //     homeData()
+    // }, [])
 
     const handleClick = (event) => {
         event.preventDefault()
@@ -12,6 +23,7 @@ export default function SearchResults({ content, query, setQuery }) {
 
     const handleChange = (event) => {
         setSearch(event.target.value)
+        history.push(`/search`)
     }
 
     console.log("search", search)
@@ -19,17 +31,14 @@ export default function SearchResults({ content, query, setQuery }) {
 
     return (
         <>
+
+
             <form onSubmit={handleClick}>
-                <input type="text" id="search" placeholder="Skriv inn en tittel..." onChange={handleChange} />
-                <button type="submit" onClick={handleClick}>Search</button>
+                <input type="text" id="search" placeholder="Write a Title..." onChange={handleChange} />
+                {/* <input type="submit" value="search"/> */}
+                <button type="submit" onClick={handleClick}>SEARCH</button>
+                {/* <button type="submit" onClick={handleClick}>Search</button> */}
             </form>
-            {/* <section id="searchBooks">
-                {content.map(item => <article key={item.key}>
-                    <h3>{item.title}</h3>
-                    <img src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`} alt={item.title} />
-                    <p>{item.author_name}</p>
-                </article>)}
-            </section> */}
 
         </>
     )
