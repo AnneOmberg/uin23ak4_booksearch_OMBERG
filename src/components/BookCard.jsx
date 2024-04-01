@@ -4,12 +4,8 @@ export default function BookCard({ content, query, setQuery }) {
 
     // const [homePage, setHomePage] = useState("")
 
-    const formatTitle = (title) => {
-        return title.toLowerCase().replace(/\s/g, "+")
-    }
-
     const homeData = () => {
-        setQuery("james bond original")
+        setQuery("james bond series")
     }
 
     useEffect(() => {
@@ -22,9 +18,17 @@ export default function BookCard({ content, query, setQuery }) {
 
     return (
         <section id="books">
-            {content.map(item => <article key={item.key}>
+            {content?.map(item => <article key={item.key}>
                 <h3>{item.title}</h3>
-                <p>{item.author_name}</p>
+                <ul className="abcdeffff">
+                    {item.author_name ?
+
+                        (<li>{item.author_name
+                        }</li>) : (<li></li>)
+                    }
+                    <li>{item.first_publish_year}</li>
+                </ul>
+                {/* <p>Author: {item.author_name}</p> */}
                 {item.cover_i ? (
                     <img src={`https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`} alt={item.title} />
                 ) : (

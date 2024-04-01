@@ -9,11 +9,9 @@ import SearchResults from './components/SearchResults'
 function App() {
 
   const [query, setQuery] = useState("")
+  // bracets indikerer array
   const [content, setContent] = useState([])
 
-  const formatTitle = (title) => {
-    return title.toLowerCase().replace(/\s/g, "+")
-  }
 
   const getData = async () => {
     try {
@@ -21,15 +19,25 @@ function App() {
       const data = await response.json()
       setContent(data.docs)
     } catch {
-      console.error("error with getData")
+      console.error("error with fetch from getData")
     }
   }
+
+  {/*const getData = async () => {
+    fetch(`https://openlibrary.org/search.json?title=${query}`)
+      .then((response) => response.json())
+      .then((data) => setContent(data.docs))
+      .catch((error) => console.error(error))
+  }*/}
 
   useEffect(() => {
     getData()
   }, [query])
 
 
+  const formatTitle = (title) => {
+    return title.toLowerCase().replace(/\s/g, "+")
+  }
 
   return (
     <>
