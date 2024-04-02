@@ -29,14 +29,14 @@ function App() {
   }, [query])
 
 
-
   const formatTitle = (title) => {
     return title.toLowerCase().replace(/\s/g, "+")
   }
 
+
   return (
     <>
-      <Layout content={content} setQuery={setQuery}>
+      <Layout content={content} query={query} setQuery={setQuery} formatTitle={formatTitle}>
         <Routes>
           {/* Bestemmer at BookCard blir startsiden */}
           <Route index element={<Navigate replace to="/james+bond" />} />

@@ -22,13 +22,14 @@ export default function SearchResults({ content, setQuery }) {
     return (
         <>
 
-
-            <form onSubmit={handleClick}>
-                <input type="text" id="search" placeholder="Write a Title..." onChange={handleChange} />
-                {/* <input type="submit" value="search"/> */}
-                <button type="submit" onClick={handleClick}>SEARCH</button>
-                {/* <button type="submit" onClick={handleClick}>Search</button> */}
-            </form>
+            <Link to={"/search"}>
+                <form onSubmit={handleClick}>
+                    <input type="text" id="search" placeholder="Write a Title..." onChange={handleChange} />
+                    {/* <input type="submit" value="search"/> */}
+                    <button type="submit" onClick={handleClick}>SEARCH</button>
+                    {/* <button type="submit" onClick={handleClick}>Search</button> */}
+                </form>
+            </Link>
             <BookCard content={content} />
 
         </>

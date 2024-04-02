@@ -12,11 +12,21 @@ fetch('https://openlibrary.org/search.json?q=your_query_here')
         console.error('Error fetching data:', error);
     });
 
-    // thor forklaring på setQuery
-    const handleClick = (newQuery) =>{
-        setQuery(newQuery)
-        }
+// thor forklaring på setQuery
+const handleClick = (newQuery) => {
+    setQuery(newQuery)
+}
 
-        // linkene jeg prøvde med i starten
+// linkene jeg prøvde med i starten
 'https://openlibrary.org/search.json?q=james+bond'
 'https://openlibrary.org/search.json?q={search_query}'
+
+{/* {includeSearchResults && <SearchResults content={content} setQuery={setQuery} >
+                        <BookCard />
+                    </SearchResults>} */}
+{/* <Link to={`/search`}>
+                        <SearchResults content={content} setQuery={setQuery} >
+                        <BookCard />
+                        </SearchResults>
+                    </Link> */}
+{/* <SearchResults><Link> Search </Link></SearchResults> */ }
