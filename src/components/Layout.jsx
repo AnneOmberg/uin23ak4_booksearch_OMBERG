@@ -3,26 +3,23 @@ import { Link, Outlet } from "react-router-dom"
 import SearchResults from './SearchResults'
 import BookCard from './BookCard'
 
-export default function Layout({ children, content, search, setQuery, includeSearchResults }) {
+export default function Layout({ children, content, setQuery }) {
 
     return (
         <>
             <header>
                 <h1>A DIGITAL LIBRARY</h1>
                 <nav>
-                    <ul>
-                        <li><Link to="/">HOME</Link></li>
-                        <li><Link to="/search">Search</Link></li>
-                    </ul>
                     {/* {includeSearchResults && <SearchResults content={content} setQuery={setQuery} >
                         <BookCard />
                     </SearchResults>} */}
                     {/* <Link to={`/search`}>
                         <SearchResults content={content} setQuery={setQuery} >
-                            <BookCard />
+                        <BookCard />
                         </SearchResults>
                     </Link> */}
                     {/* <SearchResults><Link> Search </Link></SearchResults> */}
+                    <SearchResults content={content} setQuery={setQuery} />
                 </nav>
             </header>
             <main>

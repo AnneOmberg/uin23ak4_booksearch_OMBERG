@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './App.css'
 import Layout from './components/Layout'
@@ -10,7 +10,6 @@ import Category from './components/Category'
 function App() {
 
   const [query, setQuery] = useState("james bond series")
-  // const [title, setTitle] = useState("title=")
   // bracets indikerer array
   const [content, setContent] = useState([])
 
@@ -37,11 +36,11 @@ function App() {
 
   return (
     <>
-      <Layout>
+      <Layout content={content} setQuery={setQuery}>
         <Routes>
           {/* Bestemmer at BookCard blir startsiden */}
-          <Route index element={<BookCard content={content} query={query} setQuery={setQuery} />} />
-          <Route path="/search" element={<SearchResults />}>
+          <Route index element={<Navigate replace to="/james+bond" />} />
+          <Route path=":slug" element={<BookCard content={content} />}>
           </Route>
         </Routes>
       </Layout >
