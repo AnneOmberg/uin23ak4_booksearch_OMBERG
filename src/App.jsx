@@ -4,7 +4,6 @@ import './App.css'
 import Layout from './components/Layout'
 import BookCard from './components/BookCard'
 import SearchResults from './components/SearchResults'
-// import Category from './components/Category'
 
 
 function App() {
@@ -40,7 +39,7 @@ function App() {
 
   return (
     <>
-      <Layout content={content} query={query} setQuery={setQuery} formatTitle={formatTitle} homeClick={homeClick}>
+      <Layout content={content} query={query} setQuery={setQuery} homeClick={homeClick}>
         <Routes>
           {/* Bestemmer at BookCard blir startsiden */}
           <Route index element={<Navigate replace to="/james+bond" />} />

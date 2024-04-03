@@ -3,7 +3,7 @@ import { Link, Route, useParams } from "react-router-dom"
 import SearchResults from './SearchResults'
 import BookCard from './BookCard'
 
-export default function Layout({ children, content, query, setQuery, formatTitle, homeClick }) {
+export default function Layout({ children, content, query, setQuery, homeClick }) {
     const { slug } = useParams()
     const clickHome = () => {
         homeClick()
@@ -15,7 +15,7 @@ export default function Layout({ children, content, query, setQuery, formatTitle
                 <h1>A DIGITAL LIBRARY</h1>
                 {/* <button><Link to=":slug">HOME</Link></button> */}
                 <nav>
-                    <span><Link to={"/"} onClick={clickHome}>HOME</Link></span>
+                    <button className='home'><Link to={"/"} onClick={clickHome}>HOME</Link></button>
                     {/* <div><Link to={":slug"}>HOME</Link></div> */}
                     <SearchResults content={content} setQuery={setQuery} />
                 </nav>

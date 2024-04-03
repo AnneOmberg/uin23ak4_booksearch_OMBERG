@@ -24,8 +24,24 @@ body {
         margin-top: 0rem;
     }
 
+    button {
+        color: $white;
+        background-color: $constrast;
+        border: none;
+        margin: 1rem;
+
+        a {
+            color: $white;
+        }
+
+        &:hover {
+            background-color: $darkest;
+        }
+
+    }
+
     ul {
-        display: flex;
+        display: grid;
         gap: 3rem;
         justify-content: flex-start;
         padding: 0rem 1rem;
@@ -41,50 +57,46 @@ body {
                 background-color: $constrast;
                 padding: 0.5rem;
                 font-size: 1.8rem;
-
-                &:hover {
-                    color: $medium;
-                }
             }
 
         }
-
-        button {
-            display: flex;
-            justify-content: flex-end;
-        }
     }
 
-    section {
+    #books {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         gap: 1.5rem 1rem;
 
 
+
         article {
+            display: grid;
             width: 29%;
             padding: 1rem;
             background-color: $light;
-            // background: linear-gradient(to bottom, $lightmedium, $light , $medium);
+
+            button {
+                height: fit-content;
+                width: fit-content;
+                margin: 1rem;
+            }
 
             ul {
                 display: flex;
                 flex-direction: column;
                 gap: 0rem;
-                justify-content: center;
 
                 li {
                     list-style: none;
-                    display: inline;
 
                 }
             }
 
             p.noimage {
-                color: $light;
-                background-color: $dark;
-                border: 5px solid $medium;
+                color: $white;
+                background-color: $medium;
+                border: 5px solid $dark;
                 font-weight: 500;
                 margin: 3rem 7rem;
                 padding: 4rem 0rem;
