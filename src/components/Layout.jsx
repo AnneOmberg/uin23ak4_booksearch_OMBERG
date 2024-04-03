@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link, Outlet } from "react-router-dom"
+import { Link, Route, useParams } from "react-router-dom"
 import SearchResults from './SearchResults'
 import BookCard from './BookCard'
 
-export default function Layout({ children, content, query, setQuery, formatTitle }) {
+export default function Layout({ children, content, query, setQuery, formatTitle, homeClick }) {
+    const { slug } = useParams()
+    const clickHome = () => {
+        homeClick()
+    }
 
     return (
         <>
@@ -11,7 +15,8 @@ export default function Layout({ children, content, query, setQuery, formatTitle
                 <h1>A DIGITAL LIBRARY</h1>
                 {/* <button><Link to=":slug">HOME</Link></button> */}
                 <nav>
-                    {/* <div><Link to={"/"}>HOME</Link></div> */}
+                    <span><Link to={"/"} onClick={clickHome}>HOME</Link></span>
+                    {/* <div><Link to={":slug"}>HOME</Link></div> */}
                     <SearchResults content={content} setQuery={setQuery} />
                 </nav>
             </header>

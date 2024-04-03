@@ -1,10 +1,10 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './App.css'
 import Layout from './components/Layout'
 import BookCard from './components/BookCard'
 import SearchResults from './components/SearchResults'
-import Category from './components/Category'
+// import Category from './components/Category'
 
 
 function App() {
@@ -33,10 +33,14 @@ function App() {
     return title.toLowerCase().replace(/\s/g, "+")
   }
 
+  const homeClick = () => {
+    setQuery("james bond series");
+  }
+
 
   return (
     <>
-      <Layout content={content} query={query} setQuery={setQuery} formatTitle={formatTitle}>
+      <Layout content={content} query={query} setQuery={setQuery} formatTitle={formatTitle} homeClick={homeClick}>
         <Routes>
           {/* Bestemmer at BookCard blir startsiden */}
           <Route index element={<Navigate replace to="/james+bond" />} />
