@@ -17,7 +17,7 @@ export default function Layout({ children, content, query, setQuery, homeClick }
                 <nav>
                     <button className='home'><Link to={"/"} onClick={clickHome}>HOME</Link></button>
                     {/* <div><Link to={":slug"}>HOME</Link></div> */}
-                    <SearchResults content={content} setQuery={setQuery} />
+                    {/* <SearchResults content={content} setQuery={setQuery} /> */}
                 </nav>
             </header>
             <main>

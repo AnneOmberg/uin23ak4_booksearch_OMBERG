@@ -23,6 +23,7 @@ export default function SearchResults({ content, setQuery }) {
         <>
 
             <Link to={"/search"}>
+                {/* <Link to={"/search"}> */}
                 <form onSubmit={handleClick}>
                     <input type="text" id="search" placeholder="Write a Title..." onChange={handleChange} />
                     {/* <input type="submit" value="search"/> */}
@@ -30,6 +31,7 @@ export default function SearchResults({ content, setQuery }) {
                     {/* <button type="submit" onClick={handleClick}>Search</button> */}
                 </form>
             </Link>
+            {/* </Link> */}
             <BookCard content={content} />
 
         </>

@@ -43,7 +43,7 @@ function App() {
         <Routes>
           {/* Bestemmer at BookCard blir startsiden */}
           <Route index element={<Navigate replace to="/james+bond" />} />
-          <Route path=":slug" element={<BookCard content={content} />}>
+          <Route path=":slug" element={<SearchResults content={content} setQuery={setQuery} />}>
           </Route>
         </Routes>
       </Layout >
