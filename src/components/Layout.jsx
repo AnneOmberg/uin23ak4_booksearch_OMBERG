@@ -1,20 +1,11 @@
-import { useEffect, useState } from 'react'
-import { Link, Route, useParams } from "react-router-dom"
-import SearchResults from './SearchResults'
-import BookCard from './BookCard'
+export default function Layout({ children }) {
 
-export default function Layout({ children, content, query, setQuery, homeClick }) {
-
+    // forbeholdt layout til grunnstrukturen av dokumentet med children og la inn elementer som var minimale og uten bruk av funksjoner. 
 
     return (
         <>
             <header>
                 <h1>A DIGITAL LIBRARY</h1>
-                {/* <button><Link to=":slug">HOME</Link></button> */}
-                <nav>
-                    {/* <div><Link to={":slug"}>HOME</Link></div> */}
-                    {/* <SearchResults content={content} setQuery={setQuery} /> */}
-                </nav>
             </header>
             <main>
                 {children}
