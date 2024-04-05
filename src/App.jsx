@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import './App.css'
+// import './App.css'
 import Layout from './components/Layout'
 import BookCard from './components/BookCard'
 import SearchResults from './components/SearchResults'
@@ -43,7 +43,7 @@ function App() {
         <Routes>
           {/* Bestemmer at BookCard blir startsiden */}
           <Route index element={<Navigate replace to="/james+bond" />} />
-          <Route path=":slug" element={<SearchResults content={content} setQuery={setQuery} />}>
+          <Route path=":slug" element={<SearchResults content={content} setQuery={setQuery} homeClick={homeClick} />}>
           </Route>
         </Routes>
       </Layout >
