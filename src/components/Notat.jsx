@@ -1,0 +1,32 @@
+// denne koden skal kunne brukes til å forutbestemme hvor mange objekter man fetcher
+
+fetch('https://openlibrary.org/search.json?q=your_query_here')
+    .then(response => response.json())
+    .then(data => {
+        // Assuming the API response contains a 'docs' property which is an array of objects
+        const numberOfObjects = data.docs.length;
+        console.log('Number of objects fetched:', numberOfObjects);
+        // You can then use this number as needed in your application
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
+// thor forklaring på setQuery
+const handleClick = (newQuery) => {
+    setQuery(newQuery)
+}
+
+// linkene jeg prøvde med i starten
+'https://openlibrary.org/search.json?q=james+bond'
+'https://openlibrary.org/search.json?q={search_query}'
+
+{/* {includeSearchResults && <SearchResults content={content} setQuery={setQuery} >
+                        <BookCard />
+                    </SearchResults>} */}
+{/* <Link to={`/search`}>
+                        <SearchResults content={content} setQuery={setQuery} >
+                        <BookCard />
+                        </SearchResults>
+                    </Link> */}
+{/* <SearchResults><Link> Search </Link></SearchResults> */ }
